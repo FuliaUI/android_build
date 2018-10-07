@@ -6217,6 +6217,18 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(FULIA_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(FULIA_TARGET_PACKAGE) > $(FULIA_TARGET_PACKAGE).md5sum
 	@echo "**Package completed"**: $(FULIA_TARGET_PACKAGE)"
+	echo -e "========================================="
+	echo -e ""
+	echo -e "  ______         _  _         _    _  _____ "
+	echo -e " |  ____|       | |(_)       | |  | ||_   _|"
+	echo -e " | |__    _   _ | | _   __ _ | |  | |  | |  "
+	echo -e " |  __|  | | | || || | / _\` || |  | |  | |  " 
+	echo -e " | |     | |_| || || || (_| || |__| | _| |_ "
+	echo -e " |_|      \__,_||_||_| \__,_| \____/ |_____|"
+	echo -e ""
+	echo -e "========================================="
+	echo -e ""
+	@echo "**Package completed"**: $(FULIA_TARGET_PACKAGE)"
 
 ifeq ($(BOARD_BUILD_RETROFIT_DYNAMIC_PARTITIONS_OTA_PACKAGE),true)
 name := $(product_name)-ota-retrofit-$(FILE_NAME_TAG)
