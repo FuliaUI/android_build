@@ -6257,7 +6257,7 @@ $(call declare-0p-target,$(INTERNAL_OTA_METADATA))
 ifeq ($(TARGET_BUILD_VARIANT),user)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
 else
-ifneq ($(ARROW_BUILD),)
+ifneq ($(FULIA_BUILD),)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := true
 else
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
@@ -6280,8 +6280,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(FULIA_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(FULIA_TARGET_PACKAGE) > $(FULIA_TARGET_PACKAGE).md5sum
-	@echo "**Package completed"**: $(FULIA_TARGET_PACKAGE)"
-	echo -e "========================================="
+	echo -e "============================================"
 	echo -e ""
 	echo -e "  ______         _  _         _    _  _____ "
 	echo -e " |  ____|       | |(_)       | |  | ||_   _|"
@@ -6290,7 +6289,7 @@ bacon: otapackage
 	echo -e " | |     | |_| || || || (_| || |__| | _| |_ "
 	echo -e " |_|      \__,_||_||_| \__,_| \____/ |_____|"
 	echo -e ""
-	echo -e "========================================="
+	echo -e "============================================"
 	echo -e ""
 	@echo "**Package completed"**: $(FULIA_TARGET_PACKAGE)"
 
